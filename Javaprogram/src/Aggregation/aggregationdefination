@@ -1,4 +1,0 @@
-HAS-A relationship is also known as composition or aggregation.
-The most advantage  of HAS-A relationship is reusablity.
-There is a no keyword to implement HAS-A relationship but mostly used new keyword.
-ex:employee and employee address

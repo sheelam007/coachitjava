@@ -1,0 +1,346 @@
+What is the difference between this and super keyword write 1 example program on this and super keyword?
+Ans)  this  keyword is used to access current class constructor. Use only inside another constructor of same class. Call to this()  must be the first statement only.
+Example:
+package thiskeyword;
+  public class Student {
+	int rollno;
+	String name;
+	int age; 
+   Student(int rollno,String name,int age){
+		this.rollno=rollno;
+		this.name=name;
+		this.age=age;}
+	 void display() {
+		System.out.println(rollno+" "+name+" "+age);
+	}
+	public static void main(String[] args) {
+		Student s=new Student(111,"Sandhya",25);
+        s.display();
+   }
+  }
+  
+  super(): super keyword is access parent class constructor from child class. Use only child class constructor. Call to super() must be the first statement.
+Example:
+package superkeyword;
+class Animal{
+	public void animalSound() {
+	System.out.println("The animal makes a sound");
+}
+}
+	class Cat extends Animal{
+	   public void animalSound() {
+		    super.animalSound(); 
+		  System.out.println("The Cat says: maw.. maw..");
+		  }
+		}
+public class Main {
+	public static void main(String[] args) {
+		Animal obj=new Cat();
+		    obj.animalSound(); 
+		  }
+	  }
+output:
+The animal makes a sound
+The Cat says: maw.. maw..
+  2)How to run and compile java program using command prompt?
+  Ans)
+first you can write program in notepad and save this program with name.java. Now open name.java file and now open command prompt .  
+Now write javac name.java and enter then now you can type java class name to run your program.
+
+3)Explain Java OOPs Concepts and each concept give 1 example program?
+Sol)
+Java is a object oriented programming language. 
+1)Encapsulation is a process of wrapping code and data together into a single  unit.
+package oopsconcept;
+ class Employee{
+	 private String name;
+	 public void setName(String name) {
+		 this.name=name;
+	 }
+	 public String getName() {
+		 return name;
+	 }
+ }
+public class Encapsulation {
+
+	public static void main(String[] args) {
+		Employee e=new Employee();
+		e.setName("sandhya");
+		System.out.println("Name is:"+e.getName());
+	}
+}
+output:
+Name is:sandhya
+
+
+2)Abstraction: is a process of hiding the implementation details and showing only functionality to the user
+package oopsconcept;
+
+   abstract class Bike{
+	void m1() {
+		System.out.println("this is bike");
+	}
+}
+   class Honda extends Bike{
+	public void m2() {
+		System.out.println("bike,honda is running");
+	}
+}
+ public class AbstractEx {
+	public static void main(String[] args) {
+		Honda obj=new Honda();
+		obj.m2();
+
+	}
+}
+output:bike,honda is running
+
+
+3)Inheritence :Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+package oopsconcept;
+ class Parent{
+	 void bike() {
+		 System.out.println("hero");
+	 }
+ }
+ class Child extends Parent{
+	 void cycle() {
+		 System.out.println("Atluse");
+	 }
+ }
+public class Inheritance {
+
+	public static void main(String[] args) {
+		Child obj=new Child();
+           obj.bike();
+           obj.cycle();
+	}
+}
+output:
+hero
+Atluse
+
+4)Polymorphism:
+Ans) poly means many morphism means forms.
+a) Overloading in java. When a class have multiple methods by same name but different parameters, i.e. known as method overloading
+package oopsconcept;
+
+public class Overloading {
+	   public void print(int num) {
+		System.out.println("First print method");
+		  System.out.println("int:"+num);
+	}
+	   public void print(double num) {
+		   System.out.println("second print method");
+			System.out.println("double:"+num);
+	}
+	   public void print(String text) {
+		   System.out.println("String print method");
+			System.out.println("string:"+text);
+	}
+
+  public static void main(String[] args) {
+	  Overloading p=new Overloading();
+	    p.print(10);
+	    p.print(10.35);
+	    p.print("12335");
+	}
+}
+output:First print method
+int:10
+second print method
+double:10.35
+String print method
+string:12335
+
+
+b)Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes.
+class Phone {
+	
+	public static void main(String[] args) {
+		
+		Phone obj=new cell();
+		obj.p1();
+	}
+	public void p1() {
+		System.out.println("phone is ringing....");
+		
+	}
+}
+	 class cell extends Phone{
+		public void p1() {
+			System.out.println("cell is vibrating....");
+		}
+	}
+output: cell is vibrating....
+
+4)What is  dynamic polymorphism? Write 1 example program?
+Sol)
+dynamic polymorphism also known as Run time polymorphism
+Method overriding is used to provide the specific implementation of a method which is already provided by its superclass. Method overriding is used for runtime polymorphism
+
+package overriding;
+
+class Phone {
+	
+	public static void main(String[] args) {
+		
+		Phone obj=new cell();
+		obj.p1();
+	}
+	public void p1() {
+		System.out.println("phone is ringing....");
+		
+	}
+}
+	 class cell extends Phone{
+		public void p1() {
+			System.out.println("cell is vibrating....");
+		}
+	}
+output: cell is vibrating....
+
+5)What do you mean by access modifiers? How many types of access modifiers?
+Ans)
+The access modifiers in Java specifies the accessibility or scope of a field, method, constructor, or class. We can change the access level of fields, constructors, methods, and class by applying the access modifier on it.
+There are four  types of access modifiers.
+1)Public
+2)Private
+3)Default
+4) Protected
+1)Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package
+2)Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+3)Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+4)Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+
+6)Write a program to move negative elements in the array at the end. input array: -1,3,5,-6,-6,9,-3output array: 9,5,3,-1,-3,-6,-6
+Sol)
+package Array;
+
+import java.util.Arrays;
+
+public class DesendingArray {
+	
+	public static void main(String[] args) {
+	   int arr[]= {-1,3,5,-6,-6,9,-3};
+	   Arrays.sort(arr);
+	   for(int i=arr.length-1; i>=0; i--) {
+		   System.out.print(arr[i]+" "); 
+	   }
+	}
+}
+output:
+9 5 3 -1 -3 -6 -6
+
+7)Write a program to check given number is prime Number or Not? input:15 output: false
+sol)
+package Javatest;
+
+import java.util.Scanner;
+
+public class PrimeorNot {
+      
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the input number");
+		int num=sc.nextInt();
+		int count=0;
+	      for(int i=1;i<=num; i++) {
+	    	  if(num%i==0) {
+	    	  //System.out.println(i+" ");
+	    	  count++;
+	      }
+	  }
+	if(count==2) {
+		System.out.println("Given number is Prime number: True");
+	}else {
+		System.out.println("given number is not Prime number: False");
+	}
+   }
+ }
+output:
+Enter the input number
+15
+given number is not Prime number: False
+
+8)Write a program to find sum of digits of a number  input : 13627//1+3+6+2+7=19 ; output:19
+Sol)
+public class Sumofthedigits {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the number:");
+		int n = sc.nextInt();
+		int r;
+		int sum = 0;
+		while (n > 0) {
+			r = n % 10;
+			sum = sum + r;
+			n = n / 10;
+		}
+		System.out.println(sum);
+	}
+
+}
+output:
+enter the number:
+13627
+19
+
+9)Write a java program to check given Number is palindrome or not? input : 12321 output : true
+Sol)
+package Starspattern;
+
+public class Polindrome {
+
+	public static void main(String[] args) {
+	    int rem,rev=0;
+		int number=12321;
+		int temp=number;
+		while(temp!=0) {
+			rem=temp%10;
+			rev=(rev*10)+rem;
+			temp=temp/10;
+		}
+		if(rev==number) {
+			System.out.println("given number is polyndrome:"+"true");
+		}else {
+			System.out.println("given number is not a polyndrome"+"false");
+		}
+	}
+}
+given number is polyndrome:true
+
+10)Print below pattern  input is 5
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+Sol)
+public class StarPattern {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the input pattern");
+		int n=sc.nextInt();
+		for(int i=1; i<=n; i++) {
+			for(int j=i; j<=n; j++) {
+				System.out.print(" ");
+			}
+			for(int k=1; k<=i; k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+}
+output:
+Enter the input pattern
+5
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 

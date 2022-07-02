@@ -1,0 +1,6 @@
+1)What is multi tasking? How many types of multi tasking??
+  Ans) Multi tasking is a multiple task's are done by simultaneiously.
+  two types of multitasking
+  1)Process based multitasking:separate memory location
+  2)Thread based multitasking:same memory location
+  

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <script>
+        $(function(){
+        var userName=prompt("enter the userName");
+        if(userName==null){
+            $("#msg").text(`you canceled`);
+        }else if(userName==""){
+            $("#msg").text(`you can't enter name`);
+        }  else{
+           $("#msg").html(`hello <b> ${userName}`);
+        }
+        })
+    </script>
+    </head>
+
+    <body>
+        <p id="msg"></p>
+    </body>
+</html>

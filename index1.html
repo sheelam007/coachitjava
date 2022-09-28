@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+
+    <script>
+        $(function () {
+            var categirious = ['Electronics', 'footwear', 'fashion'];
+            var data = [{ Name: 'mobile', price: 45000.44 },
+            { Name: 'tv', price: 44323.2 }
+            ];
+            $.each(categirious, function (key, value) {
+                $("#olcategerious").append(`<li>${value}</li>`);
+            })
+            $.each(categirious, function (key, value) {
+                $(`<option>${value}</option>`).appendTo("#lstcategirious");
+
+            })
+            $.each(data, function (key, value) {
+               
+                
+                $(`<tr><td>${value.Name}</td><td>${value.price}</td></tr>`).appendTo("#tbody");
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <h2>Append To ol</h2>
+    <ol id="olcategerious">
+
+    </ol>
+    <h2>Append To dropdown</h2>
+    <select id="lstcategirious">
+
+    </select>
+    <h2>Append to Table</h2>
+    <table border="1" width="300">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+
+</html>
